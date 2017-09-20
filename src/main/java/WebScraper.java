@@ -14,10 +14,14 @@ public class WebScraper {
      * @param args doesn't do anything
      */
     public static void main(final String[] args) {
-        String text = urlToString("http://erdani.com/tdpl/hamlet.txt");
-        int count = wordCount(text);
-        System.out.println(count("Give", text));
-        System.out.println(count);
+        String url = "http://erdani.com/tdpl/hamlet.txt";
+        String text = urlToString(url);
+        int wordCount = wordCount(text);
+        System.out.println(url + " has " + wordCount + " words.");
+
+        String searchFor = "Give";
+        int searchWordCount = count(searchFor, text);
+        System.out.println(searchFor + " occurs " + searchWordCount + " times in " + url);
     }
 
     /**
